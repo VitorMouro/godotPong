@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Backgroud.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Roof.tscn" type="PackedScene" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://Objects/PaddleLeft.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/PaddleRight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Ball.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Fonts/consola.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scenes/Score.gd" type="Script" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 9 )
 
 [node name="World" type="Node2D"]
 
@@ -31,4 +37,14 @@ editor/display_folded = true
 position = Vector2( 1860, 540 )
 
 [node name="Ball" parent="." instance=ExtResource( 8 )]
-position = Vector2( 990, 540 )
+
+[node name="Score" type="Label" parent="."]
+anchor_right = 1.0
+margin_top = 40.0
+margin_right = 1920.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
+text = "0 - 0"
+align = 1
+valign = 1
+script = ExtResource( 10 )
